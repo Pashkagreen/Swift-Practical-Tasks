@@ -224,7 +224,134 @@ findLargestPrefix("hello, hell, help helicopter")
 
 // 13. Повторение символов в ряду (skipped)
 
-// 14.
+// 14. Перевернуть слова в строке
+
+import Foundation
+
+func reversedWords(_ input: String) -> String {
+    // Массив строк
+    let parts = input.components(separatedBy: " ")
+    
+    // Переворачиваем каждый элемент + приведение к строке + склеивание по " "
+    return parts.map { String($0.reversed())
+    }.joined(separator: " ")
+}
+
+reversedWords("Hello, world")
+
+
+
+// Работа с числами
+
+
+
+// 15. Остаток от деления (на 3,5)
+
+func devision() -> Void {
+    for i in 1...100 {
+        if i % 3 == 0 && i % 5 == 0 {
+            print("Three five")
+        } else if i % 3 == 0 {
+            print("Three")
+        } else if i % 5 == 0 {
+            print("Five")
+        } else {
+            print(i)
+        }
+    }
+}
+
+devision()
+
+
+
+// 16. Сгенерировать рандомное число в диапазоне
+
+func generateRandom(min: Int, max: Int) -> Int {
+    return Int.random(in: min...max)
+}
+
+generateRandom(min: 20, max: 40)
+
+
+
+// 17. Возведение числа в степень
+
+func power(number: Double, power: Double) -> Double {
+    guard number > 0, power > 0 else { return 0 }
+    
+    return pow(number, power)
+}
+
+power(number: 2, power: 3)
+
+
+
+// 18. Поменять два числа местами
+
+var a = 5
+var b = 3
+
+swap(&a, &b)
+
+a
+b
+
+(a,b) = (b, a)
+
+
+
+// 19. Найти простое число
+
+func primeNumber(number: Int) -> Bool {
+    guard number >= 2 else { return false }
+    
+    for i in 2 ..< number {
+        if number % i == 0 {
+            return false
+        }
+    }
+    
+    return true
+}
+
+primeNumber(number: 19)
+
+
+
+// 22. Числа в строке
+
+func strToInt(input: UInt) -> Bool {
+    return UInt(input) != nil
+}
+
+UInt.max
+
+
+
+// 26. Расширение для коллекции, сортирующее по кол-ву символов
+
+extension Collection where Iterator.Element == String {
+    func stringSort() -> [String] {
+        return self.sorted { $0.count > $1.count }
+    }
+}
+
+let d = ["akm", "vd", "freverve", "fefvec"]
+
+d.stringSort()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
